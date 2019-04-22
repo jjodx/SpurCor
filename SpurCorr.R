@@ -20,7 +20,7 @@ report <- function(ListOut){
   dat$Sig = factor(1-dat$Sig)
   Fcolor <- c("orange","lightblue")
   Rsig<-0
-  if (sum(dat$Sig==0)>0){Rsig <- mean(dat$R[dat$Sig==0])}
+  if (sum(dat$Sig==1)<length(dat$Sig)){Rsig <- mean(dat$R[dat$Sig==0])}
   
   Rall <- mean(dat$R)
   if (Rsig>Rval){Rpos <- c("left","right")}else{Rpos <- c("right","left")}
